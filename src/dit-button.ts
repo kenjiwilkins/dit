@@ -1,14 +1,5 @@
-import {
-  LitElement,
-  css,
-  unsafeCSS,
-  ReactiveControllerHost,
-  html,
-  PropertyDeclaration,
-  TemplateResult,
-} from "lit";
-import { customElement, property } from "lit/decorators.js";
-import { classMap } from "lit/directives/class-map.js";
+import { LitElement, css, html } from "lit";
+import { customElement } from "lit/decorators.js";
 
 type ButtonType = "primary" | "secondary" | "tertiary";
 type MediaType = "mobile" | "tablet" | "desktop";
