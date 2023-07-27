@@ -3,3 +3,27 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.mobile_div {
+  max-width: 162px;
+  padding: 8px;
+  border: solid 1px #e0e0e0;
+}
+
+.tablet_div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 344px;
+  padding: 16px;
+  border: solid 1px #e0e0e0;
+}
+
+.desktop_div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1024px;
+  padding: 16px;
+  border: solid 1px #e0e0e0;
+}

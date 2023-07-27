@@ -16,13 +16,31 @@
   </head>
   <body>
     <h1>ボタン</h1>
+    <h2>概要</h2>
     <div class="column">
       <dit-button>プライマリ</dit-button>
-      <dit-button disabled>プライマリ</dit-button>
       <dit-button color="secondary">セカンダリ</dit-button>
-      <dit-button color="secondary" disabled> セカンダリ </dit-button>
       <dit-button color="tertiary">ターシャリ</dit-button>
+    </div>
+    <h3>disabled</h3>
+    <div class="column">
+      <dit-button disabled>プライマリ</dit-button>
+      <dit-button color="secondary" disabled> セカンダリ </dit-button>
       <dit-button color="tertiary" disabled> ターシャリ </dit-button>
+    </div>
+    <h3>size</h3>
+    <div class="column">
+      <div class="mobile_div">
+        <dit-button media="mobile">mobile</dit-button>
+      </div>
+      <div class="tablet_div">
+        <dit-button media="tablet">tablet</dit-button>
+        <dit-button media="tablet" form="true">tablet form</dit-button>
+      </div>
+      <div class="desktop_div">
+        <dit-button media="desktop">desktop</dit-button>
+        <dit-button media="desktop form">desktop form</dit-button>
+      </div>
     </div>
   </body>
 </html>

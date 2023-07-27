@@ -11,6 +11,7 @@ import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
 type ButtonType = "primary" | "secondary" | "tertiary";
+type MediaType = "mobile" | "tablet" | "desktop";
 
 @customElement("dit-button")
 export class DitButton extends LitElement {
@@ -18,15 +19,21 @@ export class DitButton extends LitElement {
     return {
       color: { type: String, reflect: true },
       disabled: { type: Boolean, reflect: true },
+      media: { type: String, reflect: true },
+      form: { type: Boolean, reflect: true },
     };
   }
   constructor() {
     super();
     this.color = "primary";
     this.disabled = false;
+    this.media = "mobile";
+    this.form = false;
   }
   color: ButtonType = "primary";
   disabled: boolean = false;
+  media: MediaType = "mobile";
+  form: boolean = false;
 
   static get styles() {
     return css`
@@ -46,6 +53,21 @@ export class DitButton extends LitElement {
         font-style: normal;
         font-weight: 700;
         cursor: pointer;
+      }
+      .mobile {
+        width: 100%;
+      }
+      .tablet {
+        width: 50%;
+      }
+      .tablet.form {
+        width: 100%;
+      }
+      .desktop {
+        width: 25%;
+      }
+      .desktop.form {
+        width: 75%;
       }
       .dit-button.primary {
         background-color: #0017c1;
@@ -113,7 +135,7 @@ export class DitButton extends LitElement {
     return html`
       <button
         role="button"
-        class="dit-button ${this.color}"
+        class="dit-button ${this.color} ${this.media} ${this.form && "form"}"
         ?disabled=${this.disabled}
       >
         <slot></slot>
